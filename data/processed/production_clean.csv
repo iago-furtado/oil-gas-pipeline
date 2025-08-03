@@ -1,0 +1,243 @@
+date,oil_volume,state,gas_volume
+2025-05-01,41,West Virginia,9983
+2025-04-01,38,West Virginia,9856
+2025-03-01,35,West Virginia,9671
+2025-02-01,38,West Virginia,9765
+2025-01-01,33,West Virginia,9158
+2024-12-01,32,West Virginia,9551
+2024-11-01,35,West Virginia,9530
+2024-10-01,41,West Virginia,9517
+2024-09-01,31,West Virginia,9381
+2024-08-01,35,West Virginia,9354
+2024-07-01,32,West Virginia,9466
+2024-06-01,40,West Virginia,9266
+2024-05-01,42,West Virginia,9064
+2024-04-01,42,West Virginia,9208
+2024-03-01,39,West Virginia,9178
+2024-02-01,42,West Virginia,9278
+2024-01-01,46,West Virginia,9269
+2023-12-01,43,West Virginia,8915
+2023-11-01,49,West Virginia,9004
+2023-10-01,53,West Virginia,8818
+2023-09-01,51,West Virginia,8711
+2023-08-01,55,West Virginia,8805
+2023-07-01,54,West Virginia,8806
+2023-06-01,52,West Virginia,8625
+2023-05-01,50,West Virginia,8372
+2023-04-01,48,West Virginia,8323
+2023-03-01,52,West Virginia,8377
+2023-02-01,54,West Virginia,8410
+2023-01-01,49,West Virginia,8389
+2022-12-01,41,West Virginia,7970
+2022-11-01,41,West Virginia,8219
+2022-10-01,40,West Virginia,7960
+2022-09-01,41,West Virginia,7988
+2022-08-01,41,West Virginia,8022
+2022-07-01,44,West Virginia,7942
+2022-06-01,39,West Virginia,7839
+2022-05-01,41,West Virginia,7824
+2022-04-01,44,West Virginia,7626
+2022-03-01,45,West Virginia,7512
+2022-02-01,42,West Virginia,7289
+2022-01-01,40,West Virginia,7313
+2021-12-01,39,West Virginia,7635
+2021-11-01,39,West Virginia,7383
+2021-10-01,43,West Virginia,7475
+2021-09-01,53,West Virginia,7468
+2021-08-01,51,West Virginia,7579
+2021-07-01,48,West Virginia,7152
+2021-06-01,54,West Virginia,7358
+2021-05-01,55,West Virginia,7298
+2021-04-01,56,West Virginia,7175
+2021-03-01,51,West Virginia,7018
+2021-02-01,48,West Virginia,7086
+2021-01-01,53,West Virginia,7302
+2020-12-01,54,West Virginia,7371
+2020-11-01,57,West Virginia,7350
+2020-10-01,58,West Virginia,7213
+2020-09-01,61,West Virginia,7218
+2020-08-01,55,West Virginia,7124
+2020-07-01,48,West Virginia,7041
+2020-06-01,50,West Virginia,7050
+2020-05-01,44,West Virginia,6803
+2020-04-01,46,West Virginia,6756
+2020-03-01,50,West Virginia,6747
+2020-02-01,58,West Virginia,6789
+2020-01-01,58,West Virginia,6729
+2019-12-01,53,West Virginia,6586
+2019-11-01,56,West Virginia,6535
+2019-10-01,59,West Virginia,6510
+2019-09-01,55,West Virginia,6044
+2019-08-01,53,West Virginia,5869
+2019-07-01,51,West Virginia,5823
+2019-06-01,46,West Virginia,5826
+2019-05-01,40,West Virginia,5526
+2019-04-01,39,West Virginia,5594
+2019-03-01,34,West Virginia,5533
+2019-02-01,39,West Virginia,5533
+2019-01-01,42,West Virginia,5453
+2018-12-01,41,West Virginia,5360
+2018-11-01,40,West Virginia,5342
+2018-10-01,44,West Virginia,5231
+2018-09-01,42,West Virginia,5035
+2018-08-01,40,West Virginia,4894
+2018-07-01,33,West Virginia,4749
+2018-06-01,31,West Virginia,4620
+2018-05-01,29,West Virginia,4704
+2018-04-01,30,West Virginia,4630
+2018-03-01,30,West Virginia,4605
+2018-02-01,29,West Virginia,4573
+2018-01-01,30,West Virginia,4486
+2017-12-01,28,West Virginia,4727
+2017-11-01,28,West Virginia,4719
+2017-10-01,26,West Virginia,4485
+2017-09-01,23,West Virginia,4436
+2017-08-01,24,West Virginia,4421
+2017-07-01,22,West Virginia,4271
+2017-06-01,23,West Virginia,4157
+2017-05-01,22,West Virginia,4001
+2017-04-01,21,West Virginia,3776
+2017-03-01,20,West Virginia,3713
+2017-02-01,21,West Virginia,3572
+2017-01-01,21,West Virginia,3468
+2016-12-01,20,West Virginia,3925
+2016-11-01,21,West Virginia,3895
+2016-10-01,20,West Virginia,3776
+2016-09-01,20,West Virginia,3849
+2016-08-01,22,West Virginia,3904
+2016-07-01,22,West Virginia,3840
+2016-06-01,21,West Virginia,3489
+2016-05-01,21,West Virginia,3743
+2016-04-01,20,West Virginia,3749
+2016-03-01,20,West Virginia,3668
+2016-02-01,22,West Virginia,3778
+2016-01-01,22,West Virginia,3772
+2015-12-01,22,West Virginia,3436
+2015-11-01,18,West Virginia,3249
+2015-10-01,19,West Virginia,3495
+2015-09-01,21,West Virginia,3723
+2015-08-01,21,West Virginia,3701
+2015-07-01,23,West Virginia,3600
+2015-06-01,26,West Virginia,3730
+2015-05-01,25,West Virginia,3822
+2025-05-01,15,Pennsylvania,21250
+2025-04-01,10,Pennsylvania,21115
+2025-03-01,9,Pennsylvania,21222
+2025-02-01,10,Pennsylvania,21117
+2025-01-01,10,Pennsylvania,21350
+2024-12-01,10,Pennsylvania,21418
+2024-11-01,11,Pennsylvania,20003
+2024-10-01,11,Pennsylvania,19843
+2024-09-01,12,Pennsylvania,19651
+2024-08-01,13,Pennsylvania,20036
+2024-07-01,12,Pennsylvania,20965
+2024-06-01,11,Pennsylvania,20367
+2024-05-01,13,Pennsylvania,19451
+2024-04-01,12,Pennsylvania,19447
+2024-03-01,13,Pennsylvania,19393
+2024-02-01,12,Pennsylvania,21308
+2024-01-01,14,Pennsylvania,21485
+2023-12-01,13,Pennsylvania,21736
+2023-11-01,15,Pennsylvania,21538
+2023-10-01,13,Pennsylvania,20570
+2023-09-01,12,Pennsylvania,20339
+2023-08-01,13,Pennsylvania,20615
+2023-07-01,13,Pennsylvania,20633
+2023-06-01,13,Pennsylvania,20772
+2023-05-01,14,Pennsylvania,20777
+2023-04-01,14,Pennsylvania,20523
+2023-03-01,13,Pennsylvania,20714
+2023-02-01,13,Pennsylvania,20465
+2023-01-01,13,Pennsylvania,20895
+2022-12-01,13,Pennsylvania,20149
+2022-11-01,14,Pennsylvania,20440
+2022-10-01,13,Pennsylvania,20557
+2022-09-01,14,Pennsylvania,20619
+2022-08-01,14,Pennsylvania,20503
+2022-07-01,14,Pennsylvania,20782
+2022-06-01,14,Pennsylvania,20560
+2022-05-01,15,Pennsylvania,20604
+2022-04-01,15,Pennsylvania,20492
+2022-03-01,16,Pennsylvania,20469
+2022-02-01,14,Pennsylvania,20623
+2022-01-01,16,Pennsylvania,21220
+2021-12-01,17,Pennsylvania,21873
+2021-11-01,19,Pennsylvania,21546
+2021-10-01,16,Pennsylvania,21022
+2021-09-01,17,Pennsylvania,20910
+2021-08-01,17,Pennsylvania,20860
+2021-07-01,15,Pennsylvania,20585
+2021-06-01,16,Pennsylvania,20540
+2021-05-01,18,Pennsylvania,20500
+2021-04-01,19,Pennsylvania,20673
+2021-03-01,18,Pennsylvania,20948
+2021-02-01,18,Pennsylvania,20903
+2021-01-01,17,Pennsylvania,21041
+2020-12-01,17,Pennsylvania,20909
+2020-11-01,13,Pennsylvania,20191
+2020-10-01,14,Pennsylvania,19230
+2020-09-01,15,Pennsylvania,18909
+2020-08-01,13,Pennsylvania,19869
+2020-07-01,12,Pennsylvania,19519
+2020-06-01,13,Pennsylvania,18702
+2020-05-01,14,Pennsylvania,19122
+2020-04-01,14,Pennsylvania,19584
+2020-03-01,15,Pennsylvania,19633
+2020-02-01,16,Pennsylvania,19761
+2020-01-01,17,Pennsylvania,19597
+2019-12-01,17,Pennsylvania,19624
+2019-11-01,17,Pennsylvania,19926
+2019-10-01,18,Pennsylvania,19026
+2019-09-01,18,Pennsylvania,18955
+2019-08-01,17,Pennsylvania,18884
+2019-07-01,15,Pennsylvania,18812
+2019-06-01,15,Pennsylvania,18557
+2019-05-01,18,Pennsylvania,18445
+2019-04-01,19,Pennsylvania,18669
+2019-03-01,15,Pennsylvania,18672
+2019-02-01,15,Pennsylvania,18564
+2019-01-01,17,Pennsylvania,18595
+2018-12-01,14,Pennsylvania,18515
+2018-11-01,16,Pennsylvania,18483
+2018-10-01,19,Pennsylvania,18145
+2018-09-01,18,Pennsylvania,17912
+2018-08-01,17,Pennsylvania,17456
+2018-07-01,18,Pennsylvania,17155
+2018-06-01,18,Pennsylvania,16555
+2018-05-01,19,Pennsylvania,16277
+2018-04-01,19,Pennsylvania,15974
+2018-03-01,18,Pennsylvania,16525
+2018-02-01,18,Pennsylvania,16580
+2018-01-01,17,Pennsylvania,16343
+2017-12-01,19,Pennsylvania,16289
+2017-11-01,21,Pennsylvania,15764
+2017-10-01,22,Pennsylvania,14411
+2017-09-01,19,Pennsylvania,14754
+2017-08-01,19,Pennsylvania,14494
+2017-07-01,20,Pennsylvania,14714
+2017-06-01,15,Pennsylvania,14755
+2017-05-01,16,Pennsylvania,14759
+2017-04-01,16,Pennsylvania,14891
+2017-03-01,15,Pennsylvania,14821
+2017-02-01,15,Pennsylvania,14806
+2017-01-01,15,Pennsylvania,14840
+2016-12-01,16,Pennsylvania,14722
+2016-11-01,16,Pennsylvania,14390
+2016-10-01,15,Pennsylvania,13466
+2016-09-01,16,Pennsylvania,13811
+2016-08-01,16,Pennsylvania,14191
+2016-07-01,16,Pennsylvania,14212
+2016-06-01,16,Pennsylvania,14371
+2016-05-01,18,Pennsylvania,14171
+2016-04-01,19,Pennsylvania,14214
+2016-03-01,18,Pennsylvania,14333
+2016-02-01,17,Pennsylvania,14698
+2016-01-01,18,Pennsylvania,14272
+2015-12-01,20,Pennsylvania,13993
+2015-11-01,19,Pennsylvania,13645
+2015-10-01,19,Pennsylvania,13137
+2015-09-01,19,Pennsylvania,13270
+2015-08-01,19,Pennsylvania,13218
+2015-07-01,20,Pennsylvania,12961
+2015-06-01,19,Pennsylvania,12562
+2015-05-01,20,Pennsylvania,12624
