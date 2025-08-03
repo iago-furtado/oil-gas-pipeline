@@ -7,8 +7,9 @@ from sqlalchemy.exc import SQLAlchemyError
 load_dotenv("config/settings.env")
 DB_URL = os.getenv("DB_URL")
 
-# DDL statements split manually
+# DDL statements including DROP TABLE
 ddl_statements = [
+    "DROP TABLE IF EXISTS production",
     """
     CREATE TABLE IF NOT EXISTS production (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -18,6 +19,7 @@ ddl_statements = [
         gas_volume FLOAT
     )
     """,
+    "DROP TABLE IF EXISTS wells",
     """
     CREATE TABLE IF NOT EXISTS wells (
         id TEXT PRIMARY KEY,
@@ -37,7 +39,7 @@ def init_db():
         with engine.connect() as connection:
             for ddl in ddl_statements:
                 connection.execute(text(ddl))
-            print("Tables created successfully.")
+            print("Tables dropped (if existed) and created successfully.")
     except SQLAlchemyError as e:
         print(f"Failed to initialize database: {e}")
 

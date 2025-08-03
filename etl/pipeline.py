@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 from dotenv import load_dotenv
 import pandas as pd
 from sqlalchemy import create_engine
@@ -12,60 +13,66 @@ DB_URL = os.getenv("DB_URL")
 RAW_DATA_PATH = "data/raw/"
 PROCESSED_DATA_PATH = "data/processed/"
 
+# Timestamp suffix for output files
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+
 # Create SQLAlchemy engine
 engine = create_engine(DB_URL)
 
 def load_and_clean_production():
-    # Read crude oil CSV (skip first 4 lines of metadata)
+    """
+    Load and clean crude oil and gas production data for WV and PA.
+    Output is saved as a timestamped CSV.
+    """
     crude_path = os.path.join(RAW_DATA_PATH, "U.S._crude_oil_production.csv")
-    crude_df = pd.read_csv(crude_path, skiprows=4)
-
-    # Read natural gas CSV (skip first 4 lines)
     gas_path = os.path.join(RAW_DATA_PATH, "U.S._natural_gas_production.csv")
+
+    crude_df = pd.read_csv(crude_path, skiprows=4)
     gas_df = pd.read_csv(gas_path, skiprows=4)
 
-    # Rename columns for clarity
     crude_df.columns = ['Month', 'WV_Oil', 'PA_Oil']
     gas_df.columns = ['Month', 'WV_Gas', 'PA_Gas']
 
-    # Convert Month to datetime (parse format like 'May 2025')
     crude_df['Month'] = pd.to_datetime(crude_df['Month'], format='%b %Y')
     gas_df['Month'] = pd.to_datetime(gas_df['Month'], format='%b %Y')
 
-    # Merge on Month
     production_df = pd.merge(crude_df, gas_df, on='Month', how='inner')
 
-    # Reshape to long format by state (WV, PA)
-    # Oil volumes
     oil = production_df.melt(id_vars=['Month'], value_vars=['WV_Oil', 'PA_Oil'], 
                              var_name='state_oil', value_name='oil_volume')
-    oil['state'] = oil['state_oil'].str.extract(r'^(WV|PA)_')[0].map({'WV':'West Virginia','PA':'Pennsylvania'})
-    oil = oil.drop(columns='state_oil')
+    oil['state'] = oil['state_oil'].str.extract(r'^(WV|PA)_')[0].map({
+        'WV': 'West Virginia',
+        'PA': 'Pennsylvania'
+    })
+    oil.drop(columns='state_oil', inplace=True)
 
-    # Gas volumes
     gas = production_df.melt(id_vars=['Month'], value_vars=['WV_Gas', 'PA_Gas'], 
                              var_name='state_gas', value_name='gas_volume')
-    gas['state'] = gas['state_gas'].str.extract(r'^(WV|PA)_')[0].map({'WV':'West Virginia','PA':'Pennsylvania'})
-    gas = gas.drop(columns='state_gas')
+    gas['state'] = gas['state_gas'].str.extract(r'^(WV|PA)_')[0].map({
+        'WV': 'West Virginia',
+        'PA': 'Pennsylvania'
+    })
+    gas.drop(columns='state_gas', inplace=True)
 
-    # Merge oil and gas on Month and state
-    df = pd.merge(oil, gas, on=['Month','state'])
+    df = pd.merge(oil, gas, on=['Month', 'state'])
+    df = df.rename(columns={'Month': 'date'})
 
-    # Rename columns to match DB schema
-    df = df.rename(columns={'Month': 'date', 'state': 'state'})
-
-    # Save cleaned production data CSV
     os.makedirs(PROCESSED_DATA_PATH, exist_ok=True)
-    df.to_csv(os.path.join(PROCESSED_DATA_PATH, 'production_clean.csv'), index=False)
+    output_path = os.path.join(PROCESSED_DATA_PATH, f'production_clean_{timestamp}.csv')
+    df.to_csv(output_path, index=False)
 
+    print(f"✅ Production data saved to {output_path}")
     return df
 
 
 def load_and_clean_wells():
+    """
+    Load and clean well metadata, removing rows with missing or invalid coordinates.
+    Output is saved as a timestamped CSV.
+    """
     wells_path = os.path.join(RAW_DATA_PATH, "wellspublic.csv")
     wells_df = pd.read_csv(wells_path)
 
-    # Select relevant columns & rename
     wells_df = wells_df.rename(columns={
         "API_WellNo": "id",
         "Well_Name": "well_name",
@@ -77,25 +84,26 @@ def load_and_clean_wells():
     })
 
     wells_df = wells_df[["id", "well_name", "operator_name", "status", "county", "latitude", "longitude"]]
-
-    # Drop rows with missing or invalid coordinates (latitude/longitude)
     wells_df = wells_df.dropna(subset=['latitude', 'longitude'])
+    wells_df = wells_df[(wells_df['latitude'].between(-90, 90)) & (wells_df['longitude'].between(-180, 180))]
 
-    # Filter out invalid coordinates (optional: latitude between -90 and 90, longitude between -180 and 180)
-    wells_df = wells_df[(wells_df['latitude'].between(-90,90)) & (wells_df['longitude'].between(-180,180))]
+    os.makedirs(PROCESSED_DATA_PATH, exist_ok=True)
+    output_path = os.path.join(PROCESSED_DATA_PATH, f'wells_clean_{timestamp}.csv')
+    wells_df.to_csv(output_path, index=False)
 
-    # Save cleaned wells data CSV
-    wells_df.to_csv(os.path.join(PROCESSED_DATA_PATH, 'wells_clean.csv'), index=False)
-
+    print(f"✅ Wells data saved to {output_path}")
     return wells_df
 
 
 def load_to_db(df, table_name):
+    """
+    Load a DataFrame into the specified database table.
+    """
     try:
         df.to_sql(table_name, con=engine, if_exists='replace', index=False)
-        print(f"Data loaded into '{table_name}' table.")
+        print(f"✅ Data loaded into '{table_name}' table.")
     except SQLAlchemyError as e:
-        print(f"Failed to load data into {table_name}: {e}")
+        print(f"❌ Failed to load data into '{table_name}': {e}")
 
 
 def main():
@@ -104,6 +112,7 @@ def main():
 
     wells_df = load_and_clean_wells()
     load_to_db(wells_df, 'wells')
+
 
 if __name__ == "__main__":
     main()
